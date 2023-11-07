@@ -31,4 +31,10 @@
   grid-row: span 2;
   height: 100%;
   aspect-ratio: auto;
+}
+
+button {
+  all: unset;
+  background: #000;
+  padding: 1rem;
 }/*# sourceMappingURL=main.css.map */

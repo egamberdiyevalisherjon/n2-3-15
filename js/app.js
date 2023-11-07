@@ -337,33 +337,44 @@
 //   e.target.reset()
 // });
 
-let input = document.querySelector("input");
-let btns = document.querySelectorAll("button");
+// let input = document.querySelector("input");
+// let btns = document.querySelectorAll("button");
 
-function evaluate() {
-  if (!input.value) return;
-  input.value = eval(input.value);
-}
+// function evaluate() {
+//   if (!input.value) return;
+//   input.value = eval(input.value);
+// }
 
-btns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    if (e.target.classList.contains("equal")) return evaluate();
-    if (e.target.classList.contains("clear")) return (input.value = "");
-    if (e.target.classList.contains("backspace"))
-      return (input.value = input.value.slice(0, input.value.length - 1));
-    input.value += e.target.innerText;
-  });
-});
+// btns.forEach((btn) => {
+//   btn.addEventListener("click", (e) => {
+//     if (e.target.classList.contains("equal")) return evaluate();
+//     if (e.target.classList.contains("clear")) return (input.value = "");
+//     if (e.target.classList.contains("backspace"))
+//       return (input.value = input.value.slice(0, input.value.length - 1));
+//     input.value += e.target.innerText;
+//   });
+// });
 
-document.addEventListener("keydown", (e) => {
-  let char = e.key;
-  console.log(char);
-  if (char === "=" || char === "Enter") return evaluate();
-  if (char === "Backspace") {
-    if (e.altKey) return (input.value = "");
-    return (input.value = input.value.slice(0, input.value.length - 1));
-  }
-  if (["+", "-", "*", "/", "."].includes(char)) return (input.value += char);
-  if (isNaN(+char)) return;
-  input.value += char;
+// document.addEventListener("keydown", (e) => {
+//   let char = e.key;
+//   console.log(char);
+//   if (char === "=" || char === "Enter") return evaluate();
+//   if (char === "Backspace") {
+//     if (e.altKey) return (input.value = "");
+//     return (input.value = input.value.slice(0, input.value.length - 1));
+//   }
+//   if (["+", "-", "*", "/", "."].includes(char)) return (input.value += char);
+//   if (isNaN(+char)) return;
+//   input.value += char;
+// });
+
+let likeBTN = document.querySelector(".like");
+let likeIcon = document.querySelector(".like i");
+likeBTN.addEventListener("click", () => {
+  likeIcon.classList.toggle("fa-regular");
+  likeIcon.classList.toggle("fa-solid");
+  likeIcon.classList.add("fa-bounce");
+  setTimeout(() => {
+    likeIcon.classList.remove("fa-bounce");
+  }, 1000);
 });
