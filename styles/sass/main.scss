@@ -1,0 +1,58 @@
+// h1 {
+//   &::after {
+//     content: "";
+//     border-right: 3px solid black;
+//     animation: cursor ease-in-out 1s infinite alternate;
+//   }
+// }
+
+// @keyframes cursor {
+//   to {
+//     border-right-color: white;
+//   }
+// }
+
+.calc {
+  width: 400px;
+  margin: 200px auto;
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  background: #000;
+
+  input {
+    grid-column: span 4;
+    padding: 1rem;
+    text-align: right;
+  }
+
+  button {
+    all: unset;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50px;
+    background: #444;
+  }
+
+  .minus {
+    grid-row: span 2;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .plus {
+    grid-row: span 2;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  // .equal {
+  //   grid-column: span 2;
+  //   height: 100%;
+  //   aspect-ratio: auto;
+  // }
+}
